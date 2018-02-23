@@ -1,0 +1,45 @@
+{
+
+	"env": "dev",
+	"serverPath": {
+		"dev": "http://localhost:7080",
+		"live": ""
+	},
+	"assetsPath": {
+		"dev": "/theme",
+		"live": "/theme"
+	},
+	"navLinks": {
+		"dev": {
+			"home": "index.html",
+			"about": "about.html",
+			"contact": "contact.html",
+			"dynamic": "dynapage.html",
+			"post": "single.html",
+			"admin": "#"
+		},
+		"live": {
+			"home": "/ws/home",
+			"about": "/ws/aboutus",
+			"contact": "/ws/contactus",
+			"dynamic": "/ws/p/dynapage",
+			"post": "/ws/post",
+			"admin": "/ws/admin/home"
+		}
+	},
+	"index": {
+		"title": "Blog Home"
+	},
+	"about": {
+		"title": "About Me"
+	},
+	"contact": {
+		"title": "Conact Me"
+	},
+	"dynamic": {
+		"title": "Dynamic"
+	},
+	"post": {
+		"title": "Blog Post"
+	}
+}

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Keep It Simple.</title>
+	<meta name="description" content="A full-stack, REST-based, blog and web content micro-framework in an executable jar file powered by the jvm.">  
+	<meta name="author" content="jarredweb">
+	<meta name="url" content="http://www.jarredweb.com">
+	<meta name="copyright" content="jarredweb">
+	<meta name="robots" content="index,follow">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/theme3/css/default.css">
+	<link rel="stylesheet" href="/theme3/css/layout.css">  
+	<link rel="stylesheet" href="/theme3/css/media-queries.css"> 
+
+   <!-- Script
+   ================================================== -->
+	<script src="/theme3/js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/theme3/favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="top">
+
+   	<div class="row">
+
+   		<div class="header-content twelve columns">
+
+		      <h1 id="logo-text"><a href="index.html" title="">Keep It Simple.</a></h1>
+				<p id="intro">JarredWeb Blogs</p>
+
+			</div>			
+
+	   </div>
+
+	   <nav id="nav-wrap"> 
+
+	   	<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+		   <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+
+	   	<div class="row">    		            
+
+			   	<ul id="nav" class="nav">
+			      <li class="current"><a href="/p/theme3home">Home</a></li>
+			      <li class="has-children"><a href="#">Dropdown</a>
+	                  <ul>
+	                     <li><a href="#">Submenu 01</a></li>
+	                     <li><a href="#">Submenu 02</a></li>
+	                     <li><a href="#">Submenu 03</a></li>
+	                  </ul>
+	              </li>
+	              <li><a href="/p/theme3about">About</a></li>	
+	              <li><a href="/p/theme3dyna">Demo</a></li>	
+	              <li><a href="/p/theme3archs">Archives</a></li>      	
+			      <li><a href="/admin/home">Admin</a></li>
+			   	</ul> <!-- end #nav -->			   	 
+
+	   	</div> 
+
+	   </nav> <!-- end #nav-wrap --> 	     
+
+   </header> <!-- Header End -->
+
+   <!-- Content
+   ================================================== -->
+   <div id="content-wrap">
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+
+	   		<template v-for="(blog, index) in blogs"> <post-preview :index="index" :blog="blog"></post-preview> </template>	
+
+   		</div> <!-- end main -->
+
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3> 
+                  <form action="#">
+
+                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search">
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Categories.</h3> 
+   				<ul>
+						<li><a href="#" title="">Wordpress</a> (2)</li>
+						<li><a href="#" title="">Ghost</a> (14)</li>
+						<li><a href="#" title="">Joomla</a> (5)</li>
+						<li><a href="#" title="">Drupal</a> (3)</li>
+						<li><a href="#" title="">Magento</a> (2)</li>
+						<li><a href="#" title="">Uncategorized</a> (9)</li>						
+					</ul>
+				</div>
+
+				<div class="widget widget_text group">
+					<h3>Widget Text.</h3>
+
+   				<p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
+
+   			</div>
+
+   			<div class="widget widget_tags">
+               <h3>Post Tags.</h3>
+
+               <div class="tagcloud group">
+                	<a href="#">Corporate</a>
+                  <a href="#">Onepage</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Multipurpose</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Landing Page</a>
+                  <a href="#">Resume</a>
+               </div>
+                  
+            </div>
+
+            <div class="widget widget_popular">
+               <h3>Popular Post.</h3>
+
+               <ul class="link-list">
+                  <li><a href="#">Sint cillum consectetur voluptate.</a></li>
+                  <li><a href="#">Lorem ipsum Ullamco commodo.</a></li>
+                  <li><a href="#">Fugiat minim eiusmod do.</a></li>                     
+               </ul>
+                  
+            </div>
+   			
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+   </div> <!-- end content-wrap -->
+   
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row"> 
+
+      	<div class="twelve columns">	
+			<ul class="social-links">
+               <li><a href="https://facebook.com/jarredweb"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://twitter.com/jarredweb"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://plus.google.com/108023899195605269098"><i class="fa fa-google-plus"></i></a></li>               
+               <li><a href="https://github.com/m41na/webjar-starter"><i class="fa fa-github-square"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/stephen-maina-714a9751"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-flickr"></i></a></li>               
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>			
+      	</div>
+      	
+         <div class="six columns info">
+
+            <h3>About Keep It Simple</h3> 
+
+            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+            nibh id elit. 
+            </p>
+
+            <p>Lorem ipsum Sed nulla deserunt voluptate elit occaecat culpa cupidatat sit irure sint 
+            sint incididunt cupidatat esse in Ut sed commodo tempor consequat culpa fugiat incididunt.</p>
+
+         </div>
+
+         <div class="four columns">
+
+            <h3>Photostream</h3>
+            
+            <ul class="photostream group">
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="/theme3/images/thumb.jpg"></a></li>
+            </ul>           
+
+         </div>
+
+         <div class="two columns">
+            <h3 class="social">Navigate</h3>
+
+            <ul class="navigate group">
+               <li><a href="/p/theme3home">Home</a></li>
+               <li><a href="/p/theme3about">About</a></li>
+               <li><a href="/p/theme3dyna">Demo</a></li>
+               <li><a href="/p/theme3archs">Archives</a></li>
+               <li><a href="/admin/home">Admin</a></li>
+            </ul>
+         </div>
+
+         <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="https://www.styleshout.com/">Styleshout</a>.</p>
+        
+      </div> <!-- End row -->
+
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+
+   </footer> <!-- End Footer-->
+   
+   <!-- Templates -->
+	<template id="post-preview-template">
+	<article class="entry">
+	   			
+		<header class="entry-header">
+
+			<h2 class="entry-title">
+				<a href="readBlog(blog._id)" title="">{{blog.title}}</a>
+			</h2> 				 
+		
+			<div class="entry-meta">
+				<ul>
+					<li>{{blog.dateCreated}}</li>
+					<span class="meta-sep">&bull;</span>								
+					<li>
+						<a href="#" title="" rel="category tag">Java</a>,
+						<a href="#" title="" rel="category tag">Webjar</a>  
+					</li>
+					<span class="meta-sep">&bull;</span>
+					<li>{{blog.author.name}}</li>
+				</ul>
+			</div> 
+		 
+		</header> 			
+
+		<div class="entry-content">
+			<p v-html="blog.summary"></p>
+		</div> 
+
+	</article> <!-- end entry -->  
+	</template>
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="/theme3/js/jquery-1.10.2.min.js"></script>
+   <script type="text/javascript" src="/theme3/js/jquery-migrate-1.2.1.min.js"></script>  
+   <script src="/theme3/js/main.js"></script>
+   
+   <!-- Vue js -->
+	<script type="text/javascript" src="/theme/js/vue.min.js"></script>
+
+	<!-- Vuex -->
+	<script src="/theme/js/vuex.min.js"></script>
+	
+	<script>
+	
+	//create store
+	const store = new Vuex.Store({
+	  	state: {
+	  		blogs: [],
+			_id: '',
+			page: {
+				num: 1,
+				size: 3,
+				start: 0
+			},
+			userInfo: {}
+		},
+		getters: {
+			selectedBlog(state){
+				let val = state.blogs.filter(x=>x._id == state._id);
+				return val.length > 0? val[0] : {}
+			},
+			pagerBlogList(state){
+				let pageNum = state.page.num;
+				let pageSize = state.page.size;
+				let listLen = state.blogs.length;
+				let startIndex = state.page.start;
+				let nextStartIndex =  ((pageNum - 1) * pageSize) + pageSize;
+				let endIndex = nextStartIndex > listLen? listLen : nextStartIndex;
+				return state.blogs.slice(startIndex, endIndex);
+			}
+		},
+		mutations: {
+			refreshBlogs(state, blogs){
+				state.blogs = blogs;
+			},
+			updateBlog(state, blog){
+				let i = state.blogs.findIndex(e=>e._id = blog._id);
+				state.blogs.splice(i, 1, blog);
+			}
+		}
+	});
+	
+	var PostPreview = Vue.component("post-preview", {
+		template: "#post-preview-template",
+		props: ['blog','index'],
+		methods: {
+			readBlog(id){
+				return "/p/theme3post?id=" + id;
+			}
+		}
+	});
+	
+	var app = new Vue({
+		el: "#content-wrap",
+	  	data: {},
+	  	computed: {
+	  		blogs(){
+	  			return store.state.blogs
+	  		}
+	  	},
+		mounted (){
+			//load initial data
+			$.ajax({
+				url: "/blog",
+				type: "get",
+				dataType: "json",
+				success: function(data){
+					console.log(data);
+					store.commit('refreshBlogs', data.blogs);
+				}
+			});
+	  	}
+	});
+	</script>
+
+</body>
+
+</html>

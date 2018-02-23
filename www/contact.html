@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="java,content manager,blog,website">
+    <meta name="author" content="JarredWeb">
+    
+    <!-- SEO -->
+	<meta name="description" content="A full-stack, REST-based, blog and web content micro-framework in an executable jar file powered by the jvm.">
+	<meta name="author" content="jarredweb">
+	<meta name="url" content="http://www.jarredweb.com">
+	<meta name="copyright" content="jarredweb">
+	<meta name="robots" content="index,follow">
+
+    <title>JarredWeb - Web In a Jar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/modern-business.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">JarredWeb</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ws/docs">Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ws/api">Api</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ws/home">Blog</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/ws/contact">Contact
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Contact
+        <small>Reach out</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Contact</li>
+      </ol>
+
+      <!-- Content Row -->
+      <div class="row">
+        <!-- Map Column -->
+        <div class="col-lg-8 mb-4">
+          <div id="install" class="card mb-4">
+			  <div class="card-body">
+			  
+			  	<div class="card-text">
+				    <p>Please reach out with</p>
+			        <ul class="list-group">
+			        	<li class="list-group-item">Feedback</li>
+			        	<li class="list-group-item">Suggestions</li>
+			        	<li class="list-group-item">Feature requests</li>
+			        </ul>
+			  	</div>
+			  </div>
+			</div>
+        </div>
+        
+        <!-- Contact Details Column -->
+        <div class="col-lg-4 mb-4">
+          <h3>Contact Details</h3>
+          <p>
+            <abbr title="Phone">P</abbr>: (xxx) xxx-xxxx
+          </p>
+          <p>
+            <abbr title="Email">E</abbr>:
+            <a href="mailto:m41na@yahoo.com">m41na@yahoo.com
+            </a>
+          </p>
+          <p>
+            <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 9:00 PM
+          </p>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Contact Form -->
+      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <div class="row">
+        <div class="col-lg-8 mb-4">
+          <h3>Send us a Message</h3>
+          <form name="sentMessage" id="contactForm" novalidate>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Full Name:</label>
+                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Email Address:</label>
+                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Message:</label>
+                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark">
+      <div class="container">
+      	<p class="m-2 text-center text-muted">Copyright &copy; JarredWeb 2017. Powered by webjar</p>
+        <div style="text-align:center;margin-top:5px;">
+        	<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fthejarredweb%2F&layout=button_count&size=large&mobile_iframe=true&appId=988412551240154&width=84&height=28" width="84" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        	<a href="https://twitter.com/jarredweb" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @jarredweb</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        	<script src="https://apis.google.com/js/platform.js" async defer></script><div class="g-plus" data-action="share" data-height="24"></div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/popper/popper.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/contact_me.js"></script>
+	
+	<!-- google analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-105379621-1', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+  </body>
+
+</html>
