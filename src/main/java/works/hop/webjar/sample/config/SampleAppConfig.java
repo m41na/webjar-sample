@@ -6,5 +6,5 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource({"classpath:sample-service.properties"})
-@ComponentScan(basePackages = {"works.hop.webjar.sample.service"})
+@ComponentScan(basePackages = {"works.hop.webjar.sample"})
 public class SampleAppConfig{}

@@ -1,4 +1,4 @@
-package works.hop.webjar.sample;
+package works.hop.webjar.sample.app;
 
 import works.hop.webjar.sample.model.Item;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import works.hop.webjar.bridge.ext.AppRunnerBuilder;
+import com.jarredweb.webjar.web.app.AppRunnerBuilder;
 import works.hop.webjar.sample.service.SampleService;
 
 @Path("/sample")

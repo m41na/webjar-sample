@@ -1,7 +1,7 @@
 package works.hop.webjar.sample.service;
 
-import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 @Service
 public class SampleServiceImpl implements SampleService {
