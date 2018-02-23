@@ -9,5 +9,4 @@ public interface AppServices {
     Provider<BasicsService> getBasicsService();
 
     void setBasicsService(Provider<BasicsService> basicsService);
-
 }

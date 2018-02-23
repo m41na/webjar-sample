@@ -14,7 +14,6 @@ import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.jarredweb.webjar.web.app.AppRunnerBuilder;
-import javax.ws.rs.PathParam;
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.jtwig.JtwigModel;
 import works.hop.webjar.sample.service.AppServices;
@@ -27,6 +26,10 @@ public class SampleWebApp {
     
     @Inject
     private SampleService service;
+    @Inject
+    private AppServices services;
+    @Inject
+    private BasicsService basics;
     
     @GET
     @PermitAll
@@ -56,6 +59,27 @@ public class SampleWebApp {
     }
     
     @GET
+    @Path("/twig")
+    @Produces(MediaType.TEXT_PLAIN)
+    @PermitAll
+    public Response twigHelloView() {
+        LOG.info("executing twig 'quick-resources'");
+        JtwigModel context = JtwigModel.newModel().with("var", "Twig World!!");
+        return Response.ok(new Viewable("/hello", context)).build();
+    }
+    
+    @GET
+    @Path("/ftl")
+    @Produces(MediaType.TEXT_PLAIN)
+    @PermitAll
+    public Response ftlHelloView() {
+        LOG.info("executing ftl 'quick-resources'");
+        Map<String, Object> context = new HashMap<>();
+        context.put("greeting", "Ftl World!!");
+        return Response.ok(new Viewable("/hello", context)).build();
+    }
+    
+    @GET
     @Path("service")
     @Produces(MediaType.APPLICATION_JSON)
     @PermitAll
@@ -69,71 +93,5 @@ public class SampleWebApp {
         //add system property -Dcontext.lookup=works.hop.webjar.sample.config.SampleAppConfig;
         System.setProperty("context.lookup", "works.hop.webjar.sample.config.SampleAppConfig");
         AppRunnerBuilder.init().create(args, SampleWebApp.class);
-    }
-    
-    
-    //TO ADD with tutorial
-    @Inject
-    private AppServices services;
-    @Inject
-    private BasicsService basics;
-
-    public AppServices getServices() {
-        return services;
-    }
-
-    public void setService(AppServices services) {
-        this.services = services;
-    }
-
-    public BasicsService getBasics() {
-        return basics;
-    }
-
-    public void setBasics(BasicsService basics) {
-        this.basics = basics;
-    }
-
-    @GET
-    @Path("/twig")
-    @Produces(MediaType.TEXT_PLAIN)
-    @PermitAll
-    public Response twigHelloView() {
-        LOG.info("executing twig 'quick-resources'");
-        JtwigModel context = JtwigModel.newModel().with("var", "Twig World!!");
-        return Response.ok(new Viewable("/hello", context)).build();
-    }
-
-    @GET
-    @Path("/ftl")
-    @Produces(MediaType.TEXT_PLAIN)
-    @PermitAll
-    public Response ftlHelloView() {
-        LOG.info("executing ftl 'quick-resources'");
-        Map<String, Object> context = new HashMap<>();
-        context.put("var", "Ftl World!!");
-        return Response.ok(new Viewable("/hello", context)).build();
-    }
-
-    @GET
-    @Path("/blogs")
-    @Produces(MediaType.APPLICATION_JSON)
-    @PermitAll
-    public Response fetchAllBlogs() {
-        LOG.info("executing 'fetchAllBlogs'");
-        Map<String, Object> context = new HashMap<>();
-        context.put("blogs", services.getBasicsService().get().fetchBlogs().getEntity());
-        return Response.ok(context).build();
-    }
-
-    @GET
-    @Path("/user/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @PermitAll
-    public Response fetchUserById(@PathParam("id") long id) {
-        LOG.info("executing 'fetchUserById'");
-        Map<String, Object> context = new HashMap<>();
-        context.put("user", basics.findAccount(id).getEntity());
-        return Response.ok(context).build();
     }
 }
