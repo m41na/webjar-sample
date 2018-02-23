@@ -8,3 +8,5 @@ In the wiki pages, I will walk through scenarios which touch on all these aspect
 Section A: Using webjar as a web development library
 
 Section B: Using webjar as a Blogging application framework
+
+View the wiki documentation [https://github.com/m41na/webjar-sample/wiki] here
