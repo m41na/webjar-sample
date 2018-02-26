@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.jarredweb.repo</groupId>
-            <artifactId>webjar-jetty</artifactId>
+            <artifactId>webjar-blogr</artifactId>
             <version>0.4.1-beta</version>
         </dependency>
         

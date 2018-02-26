@@ -1,5 +1,7 @@
 package works.hop.webjar.sample.app;
 
+import com.jarredweb.webjar.blogr.app.BlogrRunner;
+import com.jarredweb.webjar.http.app.AppRunnerBuilder;
 import com.jarredweb.webjar.service.api.BasicsService;
 import works.hop.webjar.sample.model.Item;
 import java.util.HashMap;
@@ -13,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.jarredweb.webjar.web.app.AppRunnerBuilder;
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.jtwig.JtwigModel;
 import works.hop.webjar.sample.service.AppServices;
@@ -92,6 +93,6 @@ public class SampleWebApp {
     public static void main(String[] args){
         //add system property -Dcontext.lookup=works.hop.webjar.sample.config.SampleAppConfig;
         System.setProperty("context.lookup", "works.hop.webjar.sample.config.SampleAppConfig");
-        AppRunnerBuilder.init().create(args, SampleWebApp.class);
+        BlogrRunner.init().create(args, SampleWebApp.class);
     }
 }
