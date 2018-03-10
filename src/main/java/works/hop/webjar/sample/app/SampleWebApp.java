@@ -1,8 +1,6 @@
 package works.hop.webjar.sample.app;
 
-import com.jarredweb.webjar.blogr.app.BlogrRunner;
 import com.jarredweb.webjar.http.app.AppRunnerBuilder;
-import com.jarredweb.webjar.service.api.BasicsService;
 import works.hop.webjar.sample.model.Item;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.jtwig.JtwigModel;
-import works.hop.webjar.sample.service.AppServices;
+import works.hop.webjar.sample.config.SampleAppConfig;
 import works.hop.webjar.sample.service.SampleService;
 
 @Path("/sample")
@@ -27,10 +25,6 @@ public class SampleWebApp {
     
     @Inject
     private SampleService service;
-    @Inject
-    private AppServices services;
-    @Inject
-    private BasicsService basics;
     
     @GET
     @PermitAll
@@ -61,17 +55,17 @@ public class SampleWebApp {
     
     @GET
     @Path("/twig")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_HTML)
     @PermitAll
     public Response twigHelloView() {
         LOG.info("executing twig 'quick-resources'");
         JtwigModel context = JtwigModel.newModel().with("var", "Twig World!!");
-        return Response.ok(new Viewable("/hello", context)).build();
+        return Response.ok(new Viewable("/jambo", context)).build();
     }
     
     @GET
     @Path("/ftl")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_HTML)
     @PermitAll
     public Response ftlHelloView() {
         LOG.info("executing ftl 'quick-resources'");
@@ -92,7 +86,9 @@ public class SampleWebApp {
     
     public static void main(String[] args){
         //add system property -Dcontext.lookup=works.hop.webjar.sample.config.SampleAppConfig;
-        System.setProperty("context.lookup", "works.hop.webjar.sample.config.SampleAppConfig");
-        BlogrRunner.init().create(args, SampleWebApp.class);
+        String configClass = SampleAppConfig.class.getName();
+        LOG.info("loading configuration for {} from {}", SampleAppConfig.class.getName(), configClass);
+        System.setProperty("context.lookup", configClass);
+        AppRunnerBuilder.init().create(args, SampleWebApp.class);
     }
 }
