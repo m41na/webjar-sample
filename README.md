@@ -1,12 +1,9 @@
-Create a content website in under 10 minutes, powered by Java.
+Fire up a java webapp in under 10 minutes with webjar-http.
 
-At the heart of it, webjar is an application library for creating and running a Java-powered website. 
-In addition to this fundamental objective, it also comes with the ability to get a simple blog site off the ground and going with minimal fuss. 
-It is also flexible enough to be extended in order to meet more customized requirements. 
-In the wiki pages, I will walk through scenarios which touch on all these aspects of the library/framework.
+The webjar-http library is a simple but not simplistic java library for getting a REST-based webapp up and running quickly and easily. 
+It was initially a part of a larger blog project from which it was distilled to seperate the application concerns from those of the
+server running the application. It knits together solid libraries in the java ecosystem to break the entry barriers to web development.
 
-Section A: Using webjar as a web development library
-
-Section B: Using webjar as a Blogging application framework
+I will demonstrate here how to make use of the library from where you can build on more functionality.
 
 View the wiki documentation [https://github.com/m41na/webjar-sample/wiki] here
