@@ -1,6 +1,6 @@
 package works.hop.webjar.sample.app;
 
-import com.jarredweb.webjar.http.app.AppRunnerBuilder;
+import com.jarredweb.zesty.http.app.ZestyRunner;
 import works.hop.webjar.sample.model.Item;
 import java.util.HashMap;
 import java.util.Map;
@@ -89,6 +89,6 @@ public class SampleWebApp {
         String configClass = SampleAppConfig.class.getName();
         LOG.info("loading configuration for {} from {}", SampleAppConfig.class.getName(), configClass);
         System.setProperty("context.lookup", configClass);
-        AppRunnerBuilder.init().create(args, SampleWebApp.class);
+        new ZestyRunner().create(args, SampleWebApp.class);
     }
 }
